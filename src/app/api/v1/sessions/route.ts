@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getVisitorSessions } from '@/shared/utils/getVisitorSessions';
+import { eventsToSessions } from '@/shared/utils/eventsToSessions';
 import {
   handleError,
   post,
@@ -32,7 +32,7 @@ const fetchEvents = async () => {
 
 export async function GET() {
   const events = await fetchEvents();
-  const visitorSessions = getVisitorSessions(events);
+  const visitorSessions = eventsToSessions(events);
 
   try {
     const response = await post(
@@ -44,6 +44,8 @@ export async function GET() {
 
     if (response.status === 200) {
       return NextResponse.json(visitorSessions);
+    } else {
+      return NextResponse.json({ error: true }, { status: 500 });
     }
   } catch (error) {
     return NextResponse.json({ error: true }, { status: 500 });
