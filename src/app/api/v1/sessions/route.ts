@@ -9,12 +9,6 @@ import {
 
 const API_URL = 'https://candidate.hubteam.com/candidateTest/v3';
 
-export const config = {
-  api: {
-    bodyParser: true,
-  },
-};
-
 const fetchEvents = async () => {
   try {
     const response = await fetch(
