@@ -1,4 +1,4 @@
-## Hubspot Challenge
+## Challenge
 
 First, install dependencies:
 
@@ -18,4 +18,4 @@ yarn dev
 
 Open [http://localhost:3000/api/v1/sessions](http://localhost:3000/api/v1/sessions) with your browser to see the result.
 
-Note: `HUBSPOT_API_KEY` was intentionally included for the sake of testing.
+Note: `API_KEY` was intentionally included for the sake of testing.

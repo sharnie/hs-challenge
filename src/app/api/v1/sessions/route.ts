@@ -18,7 +18,7 @@ export const config = {
 const fetchEvents = async () => {
   try {
     const response = await fetch(
-      `${API_URL}/problem/dataset?userKey=${process.env.HUBSPOT_API_KEY}`,
+      `${API_URL}/problem/dataset?userKey=${process.env.API_KEY}`,
     )
       .then(verifyResponse)
       .then(toJSON)
@@ -36,7 +36,7 @@ export async function GET() {
 
   try {
     const response = await post(
-      `${API_URL}/problem/result?userKey=${process.env.HUBSPOT_API_KEY}`,
+      `${API_URL}/problem/result?userKey=${process.env.API_KEY}`,
       {
         body: JSON.stringify(visitorSessions),
       },
